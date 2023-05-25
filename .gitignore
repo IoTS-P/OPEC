@@ -3,3 +3,7 @@
 *.bc
 *.dot
 .vscode/
+
+gcc/
+llvm4/
+llvm9/

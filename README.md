@@ -90,12 +90,26 @@ $ pip3 install pip -U
 $ pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
+`$ virtualenv -p python3.6.9 py3` 这里用以下命令替换
+```bash
+$ virtualenv -p python3.6 py3.6
+```
+
+发现 virtualenv 中路径都是写死的，这里使用 miniconda3 (最后未使用)
+```bash
+$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+$ ./Miniconda3-latest-Linux-x86_64.sh
+$ source ~/.bashrc
+$ conda create -n py3 python=3.6.9
+$ conda config --set auto_activate_base true
+```
+
+
 Install python libraries
 
 ```bash
 $ pip3 install networkx==2.5 pydot matplotlib serial pydotplus prettytable
 ```
-
 
 
 ## 0x02 Build OPEC
@@ -119,6 +133,9 @@ $ export OI_DIR=/home/eurosys22/OPEC/		# note that the path must have the last `
 ### Build GCC
 
 + It takes about 3 hours to build GCC
+
+
+安装时缺少 `libcollection-dev` 库
 
 ```bash
 $ cd OPEC/compiler
